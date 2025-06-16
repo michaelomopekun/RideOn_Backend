@@ -1,0 +1,15 @@
+*\bin 
+*\Debug 
+*\obj 
+*\net9.0 
+*\obj 
+*\ 
+*. pdb 
+*\publish 
+*\logs 
+*. env
+.env 
+*. user 
+*. pfx 
+
+*. key

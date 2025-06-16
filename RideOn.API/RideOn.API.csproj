@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RideOn.Application\RideOn.Application.csproj" />
+    <ProjectReference Include="..\RideOn.Infrastructure\RideOn.Infrastructure.csproj" />
+    <!-- <ProjectReference Include="..\RideOn.Domain\RideOn.Domain.csproj" /> -->
+  </ItemGroup>
+
+</Project>
