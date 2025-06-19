@@ -11,5 +11,5 @@
 .env 
 *. user 
 *. pfx 
-
+*.http
 *. key
