@@ -1,6 +1,8 @@
+using DotNetEnv;
 using RideOn.Application;
 using RideOn.Infrastructure;
 
+Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
