@@ -3,6 +3,7 @@
   <ItemGroup>
     <!-- <ProjectReference Include="..\RideOn.API\RideOn.API.csproj" /> -->
     <ProjectReference Include="..\RideOn.Domain\RideOn.Domain.csproj" />
+    <ProjectReference Include="..\RideOn.Application\RideOn.Application.csproj" />
     <!-- <ProjectReference Include="..\RideOn.Application\RideOn.Application.csproj" /> -->
   </ItemGroup>
 

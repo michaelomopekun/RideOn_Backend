@@ -9,6 +9,7 @@ using DotNetEnv;
 
 namespace RideOn.Infrastructure;
 
+#region 
 public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration config)
@@ -30,7 +31,8 @@ public static class DependencyInjection
             options.UseNpgsql(connectionString);
 
         });
-        
+
         return services;
     }
 }
+#endregion

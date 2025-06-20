@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Identity;
 
-namespace RideOn.Domain.Entities;
+namespace RideOn.Infrastructure.Identity;
 
-public class Rider
+public class ApplicationUser : IdentityUser
 {
-    public string Id { get; set; } = null!;
-    public string PhoneNumber { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
+    public string FullName { get; set; } = null!;
     public string? ProfilePictureUrl { get; set; }
     // public string? PreferredLanguage { get; set; }
     public string? Country { get; set; }

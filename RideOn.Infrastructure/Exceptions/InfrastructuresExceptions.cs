@@ -7,5 +7,19 @@ public class EnvVarNotSetException : Exception
     {
     }
 }
+// public class EnvVarNotSetException : Exception
+// {
+//     public EnvVarNotSetException(string key)
+//         : base($"Environment variable '{key}' is not set.")
+//     {
+//     }
+// }
+// public class EnvVarNotSetException : Exception
+// {
+//     public EnvVarNotSetException(string key)
+//         : base($"Environment variable '{key}' is not set.")
+//     {
+//     }
+// }
 
 

@@ -2,17 +2,20 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RideOn.Infrastructure.Data.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using RideOn.Infrastructure.Identity;
 using RideOn.Domain.Entities;
 
 namespace RideOn.Infrastructure.Data;
 
-public class RideOnDbContext(DbContextOptions<RideOnDbContext> options) : IdentityDbContext<IdentityUser>(options)
+public class RideOnDbContext(DbContextOptions<RideOnDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
-    public DbSet<Rider> Riders { get; set; }
+    // public DbSet<Rider> Riders { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+
+        builder.Entity<ApplicationUser>().ToTable("Riders");
 
         builder.ApplyConfiguration(new RiderConfiguration());
 
@@ -36,6 +39,11 @@ public class RideOnDbContext(DbContextOptions<RideOnDbContext> options) : Identi
                     .HasDefaultValueSql("CURRENT_TIMESTAMP");
             }
         }
+
+        // builder.Entity<Rider>()
+        //    .HasOne(r => r.User)
+        //    .WithOne()
+        //    .HasForeignKey<Rider>(r => r.Id);
 
     }
     
