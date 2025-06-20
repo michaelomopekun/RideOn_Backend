@@ -1,21 +1,22 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RideOn.Infrastructure.Data.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using RideOn.Domain.Entities;
 
 namespace RideOn.Infrastructure.Data;
 
-public class RideOnDbContext : IdentityDbContext<IdentityUser>
+public class RideOnDbContext(DbContextOptions<RideOnDbContext> options) : IdentityDbContext<IdentityUser>(options)
 {
+    public DbSet<Rider> Riders { get; set; }
 
-    public RideOnDbContext(DbContextOptions<RideOnDbContext> options) : base(options)
-    {
-    }
-    
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
 
-        builder.HasDefaultSchema("public");
+        builder.ApplyConfiguration(new RiderConfiguration());
+
+        // builder.HasDefaultSchema("public");
 
         // Add timestamp columns
         foreach (var entityType in builder.Model.GetEntityTypes())
